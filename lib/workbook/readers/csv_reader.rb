@@ -18,8 +18,7 @@ module Workbook
       end
       
       def parse_csv csv_raw
-        custom_date_converter = Workbook::Cell.new.string_optimistic_date_converter
-        converters = [:float,:integer,:date,:date_time,custom_date_converter]
+        converters = [:float,:integer]
         csv=nil
         #begin
         csv = csv_lib.parse(csv_raw,{:converters=>converters})
